@@ -55,16 +55,13 @@
          
         <p:growl id="growl" sticky="true" showDetail="true"/>
         
-        <h:form class="form-signin">
-            <!--style="position: absolute; top: 250px; left: 500px;" -->
+        <h:form class="form-signin">            
             <p:panelGrid columns="2" >
                 <f:facet name="header" >Login Form</f:facet>
-
                 <h:outputLabel value="Usuario: " for="idUsuario"/>
                 <h:inputText value="#{loginMB.login}" id="idUsuario"/>
                 <h:outputLabel value="Senha: " for="idSenha"/>
-                <h:inputSecret value="#{loginMB.senha}" id="idSenha"/>
-                
+                <h:inputSecret value="#{loginMB.senha}" id="idSenha"/>                
                 <f:facet name="footer" >
                     <h:commandButton value="Login" action="#{loginMB.verificaLogin()}" />
                 </f:facet>
