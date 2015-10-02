@@ -11,18 +11,19 @@
         <title>Facelets Template</title>
     </h:head>
 
-    <h:body id="bodyMasterTemplate">
-        <div id="top">            
-            
-            
+    <h:body id="bodyMasterTemplate" style="height: 100%;width: 100%;">
+        <div id="top" style="height: 20%;">            
+
             <h:form>
-                <h:graphicImage value="/resources/images/Logo_Icine2.png" class="left"/>
-                <p:commandButton  action="#{loginMB.realizaLogout()}" value="Logout" icon="ui-icon-power" />
+                <h:graphicImage value="/resources/images/Logo_Icine2.png" class="left"/>                
+
+                <p:commandButton  action="#{loginMB.realizaLogout()}" value="Logout" icon="ui-icon-power" style="float: right" />                
+                <h:outputLabel value="Bem vindo #{loginMB.usuarioLogado.name} " for="idNomeUser" style="float: right" />
+
             </h:form>
             <hr />
-            
             <p:menubar>
-                
+
                 <p:menuitem value="Home" outcome="home" icon="ui-icon-home"></p:menuitem>
                 <p:menuitem value="Filmes" outcome="filmeList" icon="ui-icon-video"></p:menuitem>
                 <p:menuitem value="Salas" outcome="salaList" icon="ui-icon-note"></p:menuitem>
@@ -32,25 +33,25 @@
                 <p:menuitem value="Usuários" outcome="usuario" icon="ui-icon-person"></p:menuitem>                
                 <p:menuitem value="Temas" outcome="theme"></p:menuitem>
             </p:menubar>
-            
-            
-            
+
             <ui:insert name="top">
                 <!--<nav class="navbar navbar-inverse navbar-fixed-top">                    
                 </nav>-->
             </ui:insert>
 
         </div>
-        <div>
-            <div id="left"  >
-                <ui:insert name="left">Left</ui:insert>
-            </div>
-            <div id="content" class="left_content" >
-                <ui:insert name="content">Content  do meio</ui:insert>
+        <div style="width: 100%;height: 100%;background: #D20005">
+            <div id="content" class="left_content" style="width: 100%;height: 100%;background: #66afe9">
+                <ui:insert name="content">
+                    Content  do meio
+                </ui:insert>
             </div>
         </div>
-        <div id="bottom">
-            <ui:insert name="bottom">Bottom</ui:insert>
+        <div id="bottom" style="width: 100%;height: 30%; background: #ff0">
+            <p:commandButton  action="#{loginMB.realizaLogout()}" value="Logout" icon="ui-icon-power" style="float: right" />                
+            <ui:insert name="bottom">
+                Bottom
+            </ui:insert>
         </div>
 
     </h:body>
